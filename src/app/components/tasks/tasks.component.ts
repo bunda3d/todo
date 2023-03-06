@@ -32,4 +32,8 @@ export class TasksComponent implements OnInit{
     console.log("this task's reminder status is now: ", task.reminder);
   }
 
+  addTask(task: Task) {
+    this.taskService.addTask(task).subscribe((task) => (this.tasks.push(task)));
+  }
+
 }
