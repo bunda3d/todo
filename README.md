@@ -1,4 +1,5 @@
-# Todo
+# Todo 
+## (Building a Traversy "Crash Course" to check out differences between Angular v9 & v15--it's been a while since I upgraded!)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 
