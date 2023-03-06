@@ -10,10 +10,16 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 export class TaskItemComponent {
   @Input() task: Task; 
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
   faTimes = faTimes;
 
   onDelete(task: Task) {
     this.onDeleteTask.emit(task);
     console.log("delete task button is emitting event for task: ", task);
+  }
+  
+  onToggle(task: Task) {
+    this.onToggleReminder.emit(task);
+    console.log("dbl click for task reminder toggle is emitting event for task: ", task);
   }
 }

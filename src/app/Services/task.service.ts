@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from 'src/app/interfaces/Task';
 
+//reusable header for json db calls
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +25,11 @@ export class TaskService {
   deleteTask(task: Task): Observable<Task> {
     const itemUri = `${this.apiUrl}/${task.id}`;
     return this.db.delete<Task>(itemUri);
+  }
+
+  updateTaskReminder(task: Task): Observable<Task> {
+    const itemUri = `${this.apiUrl}/${task.id}`;
+    return this.db.put<Task>(itemUri, task, httpOptions);
   }
   
 }

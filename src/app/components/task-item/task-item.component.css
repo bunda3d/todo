@@ -6,7 +6,8 @@
 }
 
 .task.reminder {
-  border-left: 1rem solid blue;
+  padding-left: .5rem;
+  border-left: .5rem solid blue;
 }
 
 .task h3 {

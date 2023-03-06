@@ -25,4 +25,11 @@ export class TasksComponent implements OnInit{
     this.taskService.deleteTask(task).subscribe(() => (this.tasks = this.tasks.filter(t => t.id !== task.id)))
   }
 
+  //passing in the whole object for this PUT call
+  toggleReminder(task: Task) {
+    task.reminder = !task.reminder;
+    this.taskService.updateTaskReminder(task).subscribe();
+    console.log("this task's reminder status is now: ", task.reminder);
+  }
+
 }
