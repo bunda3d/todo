@@ -15,4 +15,10 @@ export class TaskService {
   getTasks(): Observable<Task[]> {
     return this.db.get<Task[]>(this.apiUrl)
   }
+
+  deleteTask(task: Task): Observable<Task> {
+    const itemUri = `${this.apiUrl}/${task.id}`;
+    return this.db.delete<Task>(itemUri);
+  }
+  
 }

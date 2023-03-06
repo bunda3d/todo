@@ -16,10 +16,13 @@ export class TasksComponent implements OnInit{
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties.
+    //"Get All" Called after the constructor, initializing input properties.
     this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
-    
   }
 
+  //delete item by id as defined in service, then reiterate subscription for all items except the deleted item.id 
+  deleteTask(task: Task) {
+    this.taskService.deleteTask(task).subscribe(() => (this.tasks = this.tasks.filter(t => t.id !== task.id)))
+  }
 
 }
