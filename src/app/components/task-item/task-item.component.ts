@@ -15,11 +15,11 @@ export class TaskItemComponent {
 
   onDelete(task: Task) {
     this.onDeleteTask.emit(task);
-    console.log("delete task button is emitting event for task: ", task);
+    //console.log("delete task button is emitting event for task: ", task);
   }
   
   onToggle(task: Task) {
     this.onToggleReminder.emit(task);
-    console.log("dbl click for task reminder toggle is emitting event for task: ", task);
+    //console.log("dbl click for task reminder toggle is emitting event for task: ", task);
   }
 }

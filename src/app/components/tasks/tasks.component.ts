@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TaskService } from 'src/app/Services/task.service';
+import { TaskService } from 'src/app/services/task.service';
 import { Task } from 'src/app/interfaces/Task';
 
 
@@ -29,7 +29,7 @@ export class TasksComponent implements OnInit{
   toggleReminder(task: Task) {
     task.reminder = !task.reminder;
     this.taskService.updateTaskReminder(task).subscribe();
-    console.log("this task's reminder status is now: ", task.reminder);
+    //console.log("this task's reminder status is now: ", task.reminder);
   }
 
   addTask(task: Task) {
